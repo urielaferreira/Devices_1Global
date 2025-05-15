@@ -1,0 +1,24 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    container_name: devices_app
+    ports:
+      - "8080:8080"
+    depends_on:
+      - database
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:sqlserver://database:1433;databaseName=devices
+      SPRING_DATASOURCE_USERNAME: sysdemo
+      SPRING_DATASOURCE_PASSWORD: demosys
+      SPRING_JPA_PROPERTIES_HIBERNATE_DIALECT: org.hibernate.dialect.SQLServerDialect
+
+  database:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: devices_db
+    environment:
+      ACCEPT_EULA: Y
+      SA_PASSWORD: demosys
+    ports:
+      - "1433:1433"
