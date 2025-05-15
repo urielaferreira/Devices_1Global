@@ -10,6 +10,7 @@ import java.util.List;
 @Service
 public class DeviceService
 {
+    //TODO: Create DTO for Entity
     @Autowired
     private DeviceRepository repository;
 

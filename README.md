@@ -1,22 +1,22 @@
 # Devices API
 
-## 📌 Visão Geral
-Esta API permite gerenciar dispositivos com operações de **criação, atualização, exclusão e consulta**.
+## 📌 Overview
+The **Devices API** allows managing devices with operations such as **creating, updating, deleting, and retrieving data**.
 
-## 🚀 Tecnologias
-- Java 21+
-- Spring Boot
-- SQL Server
-- Docker (opcional)
-- Swagger para documentação
-- JUnit para testes
+## 🚀 Technologies Used
+- **Java 21+**
+- **Spring Boot**
+- **SQL Server**
+- **Docker (optional)**
+- **Swagger for API documentation**
+- **JUnit for testing**
 
-## 🔧 Como Rodar o Projeto
+## 🔧 How to Run the Project
 
-### 1️⃣ Configurar Banco de Dados
-- Instale o **SQL Server** e crie o banco `devices`.
-- Configure no `application.properties`.
+### 1️⃣ Configure the Database
+- Install **Microsoft SQL Server** and create a database named `devices`.
+- Configure `application.properties` with the correct connection details.
 
-### 2️⃣ Executar Aplicação
+### 2️⃣ Run the Application
 ```sh
 ./mvnw spring-boot:run

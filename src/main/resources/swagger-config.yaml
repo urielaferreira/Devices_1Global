@@ -1,21 +1,22 @@
 openapi: 3.0.1
 info:
   title: Devices API
-  description: API para gerenciamento de dispositivos
+  description: API for device management
   version: 1.0.0
 servers:
   - url: http://localhost:8080
-    description: Servidor de Desenvolvimento
+    description: Development Server
+#TODO: Adjuste post and PUT Example
 paths:
   /devices:
     get:
-      summary: Retorna todos os dispositivos
+      summary: Retrieve all devices
       operationId: getAllDevices
       responses:
         "200":
-          description: Lista de dispositivos retornada com sucesso
+          description: Successfully retrieved the list of devices
     post:
-      summary: Cria um novo dispositivo
+      summary: Create a new device
       operationId: createDevice
       requestBody:
         required: true
@@ -25,10 +26,10 @@ paths:
               $ref: "#/components/schemas/Device"
       responses:
         "201":
-          description: Dispositivo criado com sucesso
+          description: Device successfully created
   /devices/{id}:
     get:
-      summary: Retorna um dispositivo específico
+      summary: Retrieve a specific device
       operationId: getDeviceById
       parameters:
         - name: id
@@ -38,16 +39,14 @@ paths:
             type: integer
       responses:
         "200":
-          description: Dispositivo encontrado
+          description: Device found
         "404":
-          description: Dispositivo não encontrado
+          description: Device not found
 components:
   schemas:
     Device:
       type: object
       properties:
-        id:
-          type: integer
         name:
           type: string
         brand:
@@ -58,6 +57,3 @@ components:
             - AVAILABLE
             - IN_USE
             - INACTIVE
-        creationTime:
-          type: string
-          format: date-time
