@@ -10,7 +10,8 @@ import java.util.List;
 @Service
 public class DeviceService
 {
-    //TODO: Create DTO for Entity
+    //TODO: Create DTO and Mapper for Entity
+    //TODO: Create Exception Handler
     @Autowired
     private DeviceRepository repository;
 
